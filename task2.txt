@@ -1,0 +1,180 @@
+namespace task2
+{
+    internal class Program
+    {
+     
+        static void Main(string[] args)
+        {
+            int smallest = 0;
+            int largest = 0;
+            int sum = 0;
+            int find = 0;
+            int mean = 0;
+            int s = 0;
+            List<int> mylist = new List<int>() {};
+
+            do
+            {
+                Console.WriteLine("Please choose what suits you from the menu");
+                Console.WriteLine("P - print numbers");
+                Console.WriteLine("A - Add a number");
+                Console.WriteLine("M - Display mean of the numbers");
+                Console.WriteLine("S - Display the smallest number");
+                Console.WriteLine("L - Display the largest number");
+                Console.WriteLine("F - Find a number");
+                Console.WriteLine("C - Clearing the list");
+                Console.WriteLine("Q - Quit");
+
+                Console.WriteLine("please enter your choice: ");
+                char choice = char.Parse(Console.ReadLine());
+
+                if (choice == 'P' || choice == 'p')
+                {
+
+                    if (mylist.Count == 0)
+                    {
+                        Console.WriteLine("  the list is empty  ");
+                    }
+                    else
+                    {
+                        Console.WriteLine("  the list is not empty  ");
+                        for (int j = 0; j < mylist.Count; j++)
+                        {
+                            Console.Write($" {mylist[j]} ");
+                        }
+                        Console.WriteLine("]");
+
+
+
+
+
+                    }
+                }
+                else if (choice == 'A' || choice == 'a')
+
+                {
+
+                    Console.WriteLine("Enter the number:");
+                    int add_from_user = int.Parse(Console.ReadLine());
+
+                    mylist.Add(add_from_user);
+                    Console.WriteLine($"the number {add_from_user} is added");
+                    for (int j = 0; j < mylist.Count - 1; j++)
+                    {
+                        if (mylist[j] == add_from_user)
+                        {
+
+                            Console.WriteLine("The number has been repeated.");
+                            mylist.RemoveAt(j);
+                            break;
+                        }
+                    }
+                }
+                else if (choice == 'M' || choice == 'm')
+                {
+                    if (mylist.Count == 0)
+                    {
+                        Console.WriteLine("Unable to calculate the mean - no data");
+                    }
+                    else
+                    {
+                        for (int j = 0; j < mylist.Count; j++)
+                        {
+                            sum += mylist[j];
+                        }
+                        mean = sum / mylist.Count;
+                        Console.WriteLine($"the mean is : {mean}");
+                    }
+                }
+                else if (choice == 'S' || choice == 's')
+                {
+                    if (mylist.Count == 0)
+                    {
+                        Console.WriteLine("Unable to determine the smallest number - list is empty");
+                    }
+                    else
+                    {
+                        for (int j = 0; j < mylist.Count; j++)
+                        {
+                            if (mylist[j] < smallest)
+                            {
+                                smallest = mylist[j];
+                            }
+                        }
+                        Console.WriteLine($"the smallest number is : {smallest}");
+                    }
+
+                }
+                else if (choice == 'L' || choice == 'l')
+                {
+                    if (mylist.Count == 0)
+                    {
+                        Console.WriteLine("Unable to determine the largest number - list is empty");
+                    }
+                    else
+                    {
+                        for (int j = 0; j < mylist.Count; j++)
+                        {
+                            if (mylist[j] > largest)
+                            {
+                                largest = mylist[j];
+                            }
+                        }
+                        Console.WriteLine($"the largest number is : {largest}");
+                    }
+                }
+                else if (choice == 'Q' || choice == 'q')
+                {
+                    Console.WriteLine("Goodbye...............");
+                }
+                else if (choice == 'F' || choice == 'f')
+                {
+                    if (mylist.Count == 0)
+                    {
+                        Console.WriteLine(" list is empty ");
+                    }
+                    else
+                    {
+                        Console.WriteLine("inter the number can you get :");
+                        find = int.Parse(Console.ReadLine());
+                        for (int z = 0; z <= mylist.Count; z++)
+                        {
+                            if (mylist[z] == find)
+                            {
+                                Console.WriteLine($"the index of number {find} is {z}");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("not Found");
+                                break;
+                            }
+                        }
+                    }
+                }
+                else if (choice == 'C' || choice == 'c')
+                {
+                    if (mylist.Count == 0)
+                    {
+                        Console.WriteLine("the list is really empty ");
+                    }
+                    else
+                    {
+                        mylist.Clear();
+                        Console.WriteLine("clear done");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\"Unknown selection, please try again\"");
+
+                }
+            }
+            while (s==0);
+
+        }
+            
+
+            }
+
+                }

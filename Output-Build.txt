@@ -1,0 +1,8 @@
+﻿Build started at 4:18 PM...
+1>------ Build started: Project: task2, Configuration: Debug Any CPU ------
+1>Skipping analyzers to speed up the build. You can execute 'Build' or 'Rebuild' command to run analyzers.
+1>C:\Users\fares\source\repos\task2\task2\Program.cs(140,60,140,61): warning CS0162: Unreachable code detected
+1>task2 -> C:\Users\fares\source\repos\task2\task2\bin\Debug\net8.0\task2.dll
+1>Done building project "task2.csproj".
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Build completed at 4:18 PM and took 00.266 seconds ==========
